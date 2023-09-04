@@ -76,7 +76,6 @@ class ProdutoController extends Controller
     
     public function editar(DetalhesProduto $detalhes)
     {
-        dd($detalhes);
         return view('app.produto.detalhes_produto', ['detalhes'=> $detalhes]);
     }
     public function atualizar(Request $request, DetalhesProduto $detalhes)
