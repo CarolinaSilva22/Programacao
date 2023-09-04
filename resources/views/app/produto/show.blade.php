@@ -59,7 +59,7 @@
         </table>
         </div>
         <center><div class="d-g rid gap-2">
-            <td><a type="button" href="{{route('app.produto.editar', $detalhes->id)}}" class="btn btn-outline-success">Edit</a></td>
+            <td><a type="button" href="{{route('app.produto.detalhes_produto', ['detalhes' => $detalhes])}}" class="btn btn-outline-success">Edit</a></td>
             </div></center>
     </body>
 </html>

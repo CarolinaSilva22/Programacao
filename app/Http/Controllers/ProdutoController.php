@@ -61,28 +61,26 @@ class ProdutoController extends Controller
         return view('app.produto.edit', ['produto'=> $produto]);
     }
 
-    public function update(Request $request, $id)
+     public function update(Request $request, $id)
     {   
         $produto = Produto::find($id);
         $produto->update($request->all());
         return redirect()->route('app.produto.produto', [$produto->id]);
     }
 
-    public function destroy($id)
-    {
-        Produto::find($id)->delete();
+     public function destroy($id)
+     {
+       Produto::find($id)->delete();
         return redirect()->route('app.produto.produto');
     }
-
-    public function editar($id)
-    {   
-        $detalhes = DetalhesProduto::find($id);
+    
+    public function editar(DetalhesProduto $detalhes)
+    {
+        dd($detalhes);
         return view('app.produto.detalhes_produto', ['detalhes'=> $detalhes]);
     }
-
-    public function atualizar(Request $request, $id)
+    public function atualizar(Request $request, DetalhesProduto $detalhes)
     {
-        $detalhes = DetalhesProduto::find($id);
         $detalhes->update($request->all());
         return redirect()->route('app.produto.show', [$detalhes->id]);
     }

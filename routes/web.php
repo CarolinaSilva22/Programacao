@@ -36,8 +36,8 @@ Route::post('/create', [App\Http\Controllers\ProdutoController::class, 'store'])
 Route::get('/edit/{id}', [App\Http\Controllers\ProdutoController::class, 'edit'])->name('edit');
 Route::put('/{id}', [App\Http\Controllers\ProdutoController::class, 'update'])->name('update');
 Route::get('/detalhes', [App\Http\Controllers\ProdutoController::class, 'show'])->name('show');
-Route::get('/{id}', [App\Http\Controllers\ProdutoController::class, 'destroy'])->name('destroy');
+Route::get('/destroy/{id}', [App\Http\Controllers\ProdutoController::class, 'destroy'])->name('destroy');
 
-Route::get('/editar/{id}', [App\Http\Controllers\ProdutoController::class, 'editar'])->name('detalhes_produto');
-Route::put('/atualizar/{id}', [App\Http\Controllers\ProdutoController::class, 'atualizar'])->name('atualizar');
+Route::get('/editar', [App\Http\Controllers\ProdutoController::class, 'editar'])->name('detalhes_produto');
+Route::put('/atualizar', [App\Http\Controllers\ProdutoController::class, 'atualizar'])->name('atualizar');
 });

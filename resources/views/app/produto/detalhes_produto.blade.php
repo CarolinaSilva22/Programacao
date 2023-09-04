@@ -29,30 +29,31 @@
             </div>
         </nav>
         
-        <div class="shadow text-bg-info p-3 fs-3"><center>PRODUTOS</center></div></br>
+        
+         <div class="shadow text-bg-info p-3 fs-3"><center>Editar detalhes</center></div></br>
        
-        <div class="vstack gap-2 col-md-11 mx-auto">
-           <p> <a class="link-info link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
-           href="{{ route('app.produto.produto') }}">Voltar</a></p>
-        </div>
+       <div class="vstack gap-2 col-md-11 mx-auto">
+          <p> <a class="link-info link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
+          href="{{ route('app.produto.produto') }}">Voltar</a></p>
+       </div>
 
-        <div style="width: 40%; margin-left:auto;margin-right: auto; ">
-            <form method="post" action="{{route('app.produto.editar', ['detalhes' => $detalhes])}}">
-            @csrf                  
-        @method('put')          
-            <div class="mb-3">
-                <input name="produto_id" value="{{old('produto_id')}}" type="text"  placeholder="Id do produto:" class="form-control @error('produto_id') is-invalid @enderror">
-                @error('produto_id') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
-            <div class="mb-3">
-                <input name="validade" value="{{old('validade')}}" type="text"  placeholder="validade:" class="form-control @error('validade') is-invalid @enderror">
-                @error('validade') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
-            <div class="mb-3">
-                <input name="peso" value="{{old('peso')}}" type="text"  placeholder="peso:" class="form-control @error('peso') is-invalid @enderror">
-                @error('peso') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
-            <div class="d-g rid gap-2">
-            <button type="submit" class="btn btn-outline-success">cadastrar</button>
-            </div>
-        </div>
-  
+       <div style="width: 40%; margin-left:auto;margin-right: auto; ">
+           <form method="post" action="{{route('app.produto.atualizar', $detalhes->id)}}">
+           @csrf                  
+       @method('put')          
+           <div class="mb-3">
+               <input name="produto_id" value="{{$detalhe->produto_id ?? old('produto_id')}}" type="text"  placeholder="Id do produto:" class="form-control @error('produto_id') is-invalid @enderror">
+               @error('produto_id') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
+           <div class="mb-3">
+               <input name="validade" value="{{$detalhe->validade ?? old('validade')}}" type="text"  placeholder="validade:" class="form-control @error('validade') is-invalid @enderror">
+               @error('validade') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
+           <div class="mb-3">
+               <input name="peso" value="{{$detalhe->peso ?? old('peso')}}" type="text"  placeholder="peso:" class="form-control @error('peso') is-invalid @enderror">
+               @error('peso') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
+           <div class="d-g rid gap-2">
+           <button type="submit" class="btn btn-outline-success">cadastrar</button>
+           </div>
+       </div>
+</div>
     </body>
 </html>
