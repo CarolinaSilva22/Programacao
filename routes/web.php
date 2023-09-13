@@ -17,7 +17,6 @@ Route::post('/login', [App\Http\Controllers\LoginController::class, 'autenticar'
 Route::middleware('autenticacao')->prefix('/app')->name('app.')->group(function() {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/sair', [App\Http\Controllers\LoginController::class, 'sair'])->name('sair');
-Route::get('/clientes',[App\Http\Controllers\ClienteController::class, 'index'])->name('cliente');
 });
 
 Route::middleware('autenticacao')->prefix('/app/fornecedores')->name('app.fornecedor.')->group(function() {
@@ -38,6 +37,11 @@ Route::put('/update/{id}', [App\Http\Controllers\ProdutoController::class, 'upda
 Route::get('/detalhes', [App\Http\Controllers\ProdutoController::class, 'show'])->name('show');
 Route::get('/destroy/{id}', [App\Http\Controllers\ProdutoController::class, 'destroy'])->name('destroy');
 
-Route::get('/editar', [App\Http\Controllers\ProdutoController::class, 'editar'])->name('detalhes_produto');
+Route::get('/editar', [App\Http\Controllers\ProdutoController::class, 'editar'])->name('editar');
 Route::put('/atualizar', [App\Http\Controllers\ProdutoController::class, 'atualizar'])->name('atualizar');
+});
+
+Route::middleware('autenticacao')->prefix('/app/cliente')->name('app.cliente.')->group(function() {
+    Route::get('/', [App\Http\Controllers\ClienteController::class, 'index'])->name('cliente');
+
 });

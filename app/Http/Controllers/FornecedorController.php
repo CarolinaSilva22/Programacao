@@ -43,8 +43,8 @@ class FornecedorController extends Controller
                 'email.email'=> 'Esse campo tem que ser um email válido!!'];
 
         $request->validate($regras, $feedback);
-        $fornecedor = new Fornecedor();
-        $fornecedor->create($request->all());
+  
+        $fornecedor = Fornecedor::create($request->all());
             }
             if($request->input('_token') != '' && $request->input('id') != ''){
                 $fornecedor = Fornecedor::find($request->input('id'));

@@ -74,13 +74,14 @@ class ProdutoController extends Controller
         return redirect()->route('app.produto.produto');
     }
     
-    public function editar(DetalhesProduto $detalhes)
+    public function editar(DetalhesProduto $detalhe)
     {
-        return view('app.produto.detalhes_produto', ['detalhes'=> $detalhes]);
+       
+        return view('app.produto.detalhes_produto', ['produto_id'=> $detalhe->id]);
     }
-    public function atualizar(Request $request, DetalhesProduto $detalhes)
+    public function atualizar(Request $request, DetalhesProduto $detalhe)
     {
-        $detalhes->update($request->all());
-        return redirect()->route('app.produto.show', [$detalhes->id]);
+        $detalhe->update($request->all());
+        return redirect()->route('app.produto.show', [$detalhe->id]);
     }
 }

@@ -38,7 +38,7 @@
        </div>
 
        <div style="width: 40%; margin-left:auto;margin-right: auto; ">
-           <form method="post" action="{{route('app.produto.atualizar', $detalhes->id)}}">
+           <form method="post" action="{{route('app.produto.atualizar', $detalhe->id)}}">
            @csrf                  
        @method('put')          
            <div class="mb-3">

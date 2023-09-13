@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.home') }}">Principal</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="{{ route('app.cliente') }}">Clientes</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="{{ route('app.cliente.cliente') }}">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.fornecedor.fornecedor') }}">Fornecedores</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.produto.produto') }}">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.sair') }}">Sair</a></li>
@@ -30,5 +30,33 @@
             </div>
         </nav>
         <div class="shadow text-bg-info p-3 fs-3"><center>CLIENTES</center></div>
+        <div style="width: 90%; margin-left:auto;margin-right: auto; ">  
+        <div class="vstack gap-2 col-md-14 mx-auto">
+        <p> <a class="link-info link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
+         href="">Novo</a></p>
+        </div>
+       
+        <table class="table">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">Nome</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($clientes as $cliente)
+            <tr>
+                <td>{{$cliente->nome}}</td>
+                <td><a type="button" href="" class="btn btn-outline-secondary">Detalhes</a></td>
+                <td><a type="button" href="" class="btn btn-outline-success">Edit</a></td>
+                <td><a type="button" href="" class="btn btn-outline-primary">Excluir</a></td>
+            </tr>
+            </tr>
+        @endforeach
+        </tbody>
+        </table>
+        </div>
+  
     </body>
 </html>
+

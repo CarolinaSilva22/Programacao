@@ -33,6 +33,7 @@
                         @error('senha') <div class="invalid-feedback">{{$message}}</div>@enderror</div>
     
                         <button type="submit" class="borda-preta">Acessar</button>
+                        
                     </div>
                 </form>
                 {{ isset($erro) && $erro != '' ? $erro : ''}}

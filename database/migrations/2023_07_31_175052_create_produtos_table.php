@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
-            $table->float('preço', 8,2)->default(0.01);
+            $table->float('preco', 8,2)->default(0.01);
             $table->integer('estoque_minimo')->default(0);
             $table->integer('estoque_maximo')->default(1);;
             $table->text('descricao')->nullable();

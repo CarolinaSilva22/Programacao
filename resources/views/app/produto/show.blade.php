@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.home') }}">Principal</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="{{ route('app.cliente') }}">Clientes</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="{{ route('app.cliente.cliente') }}">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.fornecedor.fornecedor') }}">Fornecedores</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.produto.produto') }}">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('app.sair') }}">Sair</a></li>
@@ -58,8 +58,6 @@
         </tbody>
         </table>
         </div>
-        <center><div class="d-g rid gap-2">
-            <td><a type="button" href="{{route('app.produto.detalhes_produto', ['detalhes' => $detalhes])}}" class="btn btn-outline-success">Edit</a></td>
-            </div></center>
+       
     </body>
 </html>
